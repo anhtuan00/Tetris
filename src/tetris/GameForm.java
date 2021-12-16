@@ -10,12 +10,21 @@ package tetris;
  * @author Admin
  */
 public class GameForm extends javax.swing.JFrame {
+    
+    private GameArea ga;
 
    
     public GameForm() {
         initComponents();
-        this.add(new GameArea(gameAreaPlaceholder,10) );
         
+        ga = new GameArea(gameAreaPlaceholder,10);
+        this.add( ga);
+        
+        startGame();
+    }
+    
+    public void startGame(){
+        new GameThread(ga).start();
     }
 
     
