@@ -12,8 +12,7 @@ import java.util.Random;
  *
  * @author Admin
  */
-public class TetrisBlock {
-    
+public class TetrisBlock { 
     private int [][] shape;
     private Color color;
     private int x,y;
@@ -39,25 +38,16 @@ public class TetrisBlock {
     
     private void initShapes(){
         shapes = new int[4][][];
-        
         for (int i = 0; i < 4; i++) {
-            
             int r = shape[0].length;
             int c = shape.length;
-            
             shapes[i] = new int[r][c];
-            
             for (int y = 0; y < r; y++) {
-                for (int x = 0; x < c; x++) {
-                    
+                for (int x = 0; x < c; x++) { 
                     shapes[i][y][x] = shape[c - x - 1][y];
-                    
                 }
-                
             }
-            
-            shape = shapes[i];
-            
+            shape = shapes[i];   
         }
     }
     
@@ -76,53 +66,19 @@ public class TetrisBlock {
         color = availableColors[ r.nextInt(availableColors.length)];
     }
 
-    /**
-     * @return the shape
-     */
-    public int[][] getShape() {
-        return shape;
-    }
-
-    /**
-     * @return the color
-     */
-    public Color getColor() {
-        return color;
-    }
-    
-    public int getHeight(){
-        return shape.length;
-    }
-    
-    public int getWidth(){
-        return shape[0].length; 
-    }
-
-    /**
-     * @return the x
-     */
-    public int getX() {
-        return x;
-    }
-
-    /**
-     * @return the y
-     */
-    public int getY() {
-        return y;
-    }
-    
-    public void moveDown(){
-        y++;
-    }
-    
-    public void moveLeft(){
-        x--;
-    }
-    
-    public void moveRight(){
-        x++;
-    }
+    public int[][] getShape() { return shape; }
+    public Color getColor() { return color; } 
+    public int getHeight() { return shape.length; }
+    public int getWidth() { return shape[0].length; }
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public int getBottomEdge(){ return y + getHeight(); } 
+    public int getLeftEdge(){ return x; }
+    public int getRightEdge(){ return x + getWidth(); }
+   
+    public void moveDown() { y++; }
+    public void moveLeft() { x--; }
+    public void moveRight() { x++; }
     
     public void rotate(){
         currentRotation++;
