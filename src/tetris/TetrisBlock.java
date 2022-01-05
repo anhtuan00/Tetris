@@ -80,41 +80,15 @@ public class TetrisBlock {
     public void moveLeft() { x--; }
     public void moveRight() { x++; }
     
+    public void setX(int x) { this.x = x; }
+    public void setY(int y) { this.y = y; }
+    
     public void rotate(){
         currentRotation++;
         if (currentRotation >3) {
             currentRotation=0;
         }
-            
-
         shape = shapes[currentRotation];
         
-    }
-    
-    public int getBottomEdge(){
-        return y + getHeight();
-    }
-    
-    public int getLeftEdge(){
-        return x;
-    }
-    
-    public int getRightEdge(){
-        return x + getWidth();
-    }
-
-    /**
-     * @param x the x to set
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    /**
-     * @param y the y to set
-     */
-    public void setY(int y) {
-        this.y = y;
-    }
-    
+    } 
 }
