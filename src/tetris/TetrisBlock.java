@@ -91,17 +91,7 @@ public class TetrisBlock {
         
     }
     
-    public int getBottomEdge(){
-        return y + getHeight();
-    }
     
-    public int getLeftEdge(){
-        return x;
-    }
-    
-    public int getRightEdge(){
-        return x + getWidth();
-    }
 
     /**
      * @param x the x to set
